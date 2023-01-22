@@ -37,7 +37,10 @@ class C1 extends Controller
 
     }
 
-    public function deleteUser(){
+    public function deleteUser(Request $req){
+        $id = $req->input('id');
+        DB::delete('delete from users where id = ?' , [$id]);
+        return redirect('/data');
 
     }
     

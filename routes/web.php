@@ -19,6 +19,9 @@ Route::get('/', function () {
 
 Route::view('newUser' , 'newUser');
 Route::get('edit/{id}' , 'App\Http\Controllers\C1@findUser');
+Route::get('delete/{id}' ,function ($id) {
+    return view('delete' , ['id'=>$id]);
+} );
 
 Route::get('/data' , 'App\Http\Controllers\C1@getdata');
 Route::post('/data' , 'App\Http\Controllers\C1@newUser');
