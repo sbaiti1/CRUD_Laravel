@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>showdata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <title>showdata</title>
 </head>
-<body>
+<body class="bg-slate-900">
+  <!--nav -->
+  @include('components.nav')
+  
+  <!--end of nav -->
+  @include('components.cards')
 
-    total : {{$total}}
-    <a href="/newUser">add user</a>
-     @foreach ($data as $item)
-        
-    <h6> id : {{ $item->id }} </h6>
-    <h6> id : {{ $item->name }} </h6>
-    <h6> id : {{ $item->email }} </h6>
-    <?php $link = "/edit/".$item->id ;$link2 = "/delete/".$item->id;?>
-    <a href=" {{$link}} ">edit</a>
-    <a href=" {{$link2}} ">delete</a>
 
-    <hr>
+  <!--end of nav -->
+  @include('components.table')
+ 
 
-    @endforeach
+  <!--end of nav -->
+  @include('components.footer')
+
+    
+    
 </body>
 </html>
